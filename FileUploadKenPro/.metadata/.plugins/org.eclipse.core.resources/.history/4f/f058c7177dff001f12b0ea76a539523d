@@ -1,0 +1,21 @@
+package com.kenpro.customvalidations;
+
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.time.LocalDate;
+
+public class CustomDateValidatorClass implements ConstraintValidator<CustomDateValidator, List<LocalDateTime>> {
+
+
+	@Override
+	public boolean isValid(List<LocalDateTime> dateTimeList, ConstraintValidatorContext context) {
+		        if (dateTimeList == null || dateTimeList.isEmpty()) {
+		            return false;
+		        }
+		        return dateTimeList.stream().allMatch(dateTime -> dateTime.toLocalDate().isEqual(LocalDate.now()));
+		
+		return false;
+
+}

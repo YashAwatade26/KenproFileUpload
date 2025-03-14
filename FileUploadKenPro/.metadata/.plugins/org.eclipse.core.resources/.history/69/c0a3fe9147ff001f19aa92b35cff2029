@@ -1,0 +1,5 @@
+package com.kenpro.service;
+
+public interface FileService {
+
+}

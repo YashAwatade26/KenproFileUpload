@@ -1,0 +1,5 @@
+package com.kenpro.pojos;
+
+public class FileDetails {
+
+}

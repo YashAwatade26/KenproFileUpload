@@ -1,0 +1,5 @@
+package co.kenpro.exceptions;
+
+public class FileProcessingException {
+
+}

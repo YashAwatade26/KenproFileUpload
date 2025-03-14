@@ -1,0 +1,31 @@
+package com.kenpro.requestDTO;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.kenpro.customvalidations.CustomDateValidator;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+public class UploadRequestDTO {
+	
+	@NotEmpty(message = "Files list cannot be empty")
+    private List<MultipartFile> files;
+
+    @NotEmpty(message = "Received from list cannot be empty")
+    private List<@NotBlank(message = "Received from cannot be blank") String> receivedFrom;
+
+    @NotEmpty(message = "Received date-time list cannot be empty")
+    private List<@CustomDateValidator LocalDateTime> receivedDateTime;
+
+    @NotEmpty(message = "Modified date-time list cannot be empty")
+    private List<@CustomDateValidator LocalDateTime> modifiedDateTime;
+
+    @NotEmpty(message = "Description list cannot be empty")
+    private List<String> description;
+
+
+}

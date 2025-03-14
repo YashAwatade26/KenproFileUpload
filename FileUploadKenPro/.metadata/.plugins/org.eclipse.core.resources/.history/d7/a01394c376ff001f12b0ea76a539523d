@@ -1,0 +1,5 @@
+package com.kenpro.customvalidations;
+
+public interface CustomDateValidator {
+
+}
